@@ -2,6 +2,7 @@
 
 import os
 import sys
+import time
 import argparse
 
 import numpy as np
@@ -11,7 +12,17 @@ import gffutils
 
 from ragtag_utilities.AlignmentReader import PAFReader
 from ragtag_utilities.AGPFile import AGPFile
-from ragtag_utilities.utilities import run_oe, log
+from ragtag_utilities.utilities import run_oe
+
+
+def log(level, message):
+    """ Log messages to standard error. """
+    level = level.upper()
+    if level not in {"VERSION", "CMD", "INFO", "WARNING", "DEBUG"}:
+        raise ValueError("Invalid logging level: {}".format(level))
+
+    sys.stderr.write(time.ctime() + " --- " + level + ": " + message + "\n")
+    sys.stderr.flush()
 
 
 def main():
