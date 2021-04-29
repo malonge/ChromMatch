@@ -132,7 +132,7 @@ def main():
     tx2ref_seq = {}  # transcript -> reference sequence
     tx2strand = {}  # transcript -> strand
 
-    db = gffutils.create_db("TAIR10_GFF3_genes.gff", "TAIR10_GFF3_genes.gff" + "_db", merge_strategy="create_unique", force=True, verbose=True)
+    db = gffutils.create_db(reference_genes_fn, reference_genes_fn + "_db", merge_strategy="create_unique", force=True, verbose=True)
     for feature in db.all_features():
         # Go through each gene and get the list of its transcripts
         if feature.featuretype == "gene":
