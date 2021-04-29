@@ -24,7 +24,7 @@ python3 chrom_match.py target.fa reference.fa reference.genes.gff3
 
 Suppose that the target and reference assemblies have additional sequences, such as unplaced contigs/scaffolds. Then, supply the sequences to be matched with `-t` and `-r`.
 
-In all cases, the number of target and reference sequencs must match in order to be matched
+In all cases, the number of target and reference sequences must be the same in order to be matched.
 
 ## Pipeline
 1. Write reference transcripts to a FASTA file
