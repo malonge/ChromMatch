@@ -34,6 +34,6 @@ In all cases, the number of target and reference sequences must be the same in o
     - Only consider representative transcripts if they align with mapq > 10 and coverage >= 85%
     - Target sequences make one set of nodes
     - Reference sequences make the other set of nodes
-    - Edges connecting these nodes have their weight decremented by one if they share a transcript
+    - Edges connecting these nodes have their weight decremented by one for each shared transcript
 4. Compute a minimum weight full matching for the graph
 5. Output the matching solution in AGP format
